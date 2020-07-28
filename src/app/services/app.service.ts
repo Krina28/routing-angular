@@ -5,15 +5,17 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AppService {
-    
-    private url: string = 'https://jsonplaceholder.typicode.com/users';
-    
+    private url: string = 'https://jsonplaceholder.typicode.com';
+
     constructor(private http: HttpClient) { }
-    
-    getAllUsers()  {
-        return this.http.get(this.url);
+
+    getAllUsers() {
+        return this.http.get(this.url + '/users');
     }
-    
+
+    getAllProducts() {
+        return this.http.get(this.url + '/photos');
+    }
     // handleError(error: any) {
     //     console.error(error);
     //     return Observable.throw(error.json().error || 'Server error');
