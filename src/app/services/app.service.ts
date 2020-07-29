@@ -16,6 +16,10 @@ export class AppService {
     getAllProducts() {
         return this.http.get(this.url + '/photos');
     }
+
+    getUserDetail(id: String) {
+        return this.http.get(this.url + '/users/' + id);
+    }
     // handleError(error: any) {
     //     console.error(error);
     //     return Observable.throw(error.json().error || 'Server error');

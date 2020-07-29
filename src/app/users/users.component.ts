@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../services/app.service';
 import { take } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +10,7 @@ import { take } from 'rxjs/operators';
 })
 
 export class UsersComponent implements OnInit {
-
+  router: Router;
   allUsers: any = [];
 
   constructor(private appService: AppService) { }
@@ -27,6 +28,11 @@ export class UsersComponent implements OnInit {
     //     this.allUsers = data;
     //   });
     console.log('all users list', this.allUsers)
+  }
+
+  public goToUser(id: String) {
+    console.log('>>>>user id', id)
+    this.router.navigate(['/users/' + id]);
   }
 
 }
