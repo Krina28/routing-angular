@@ -1,0 +1,11 @@
+<div class="card cards" *ngFor="let product of allProducts">
+    <div id="{{product.id}}">
+        <img src="{{product.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.title}}</h5>
+        </div>
+        <div class="card-body">
+            <a href="#" class="card-link">Go to Details</a>
+        </div>
+    </div>
+</div>
