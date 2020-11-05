@@ -15,18 +15,19 @@ export class UsersComponent implements OnInit {
 
   constructor(private appService: AppService) { }
 
+  //table view, sorting, pagination, searching
   async ngOnInit() {
-    const data = await this.appService.getAllUsers().pipe(take(1)).toPromise();
+    //const data = await this.appService.getAllUsers().pipe(take(1)).toPromise();
 
-    console.log('data', data)
-    this.allUsers = data;
+    //console.log('data', data)
+    //this.allUsers = data;
 
     //This had issue of async await - please explain
-    // await this.appService.getAllUsers()
-    //   .subscribe((data) => {
-    //     console.log('data', data)
-    //     this.allUsers = data;
-    //   });
+    await this.appService.getAllUsers()
+      .subscribe((data) => {
+        console.log('data', data)
+        this.allUsers = data;
+      });
     console.log('all users list', this.allUsers)
   }
 

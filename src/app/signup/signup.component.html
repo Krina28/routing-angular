@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="form">
+                <div class="logo mb-3">
+                    <div class="col-md-12 text-center">
+                        <h1>Sign up</h1>
+                    </div>
+                </div>
+                <form method="post" name="signup">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input name="name" class="form-control" required [(ngModel)]="name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email ID</label>
+                        <input name="email" class="form-control" required [(ngModel)]="email" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Gender</label>
+                        <div>
+                            <input id="male" type="radio" value="male" name="gender">
+                            <label for="male"> Male</label>
+                        </div>
+                        <div>
+                            <input id="female" type="radio" value="female" name="gender">
+                            <label for="female"> Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Address</label>
+                        <input type="textarea" name="address" class="form-control" required [(ngModel)]="address"
+                            placeholder="Enter Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword">Password</label>
+                        <input type="password" name="password" id="password" class="form-control"
+                            placeholder="Enter Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword">Confirm Password</label>
+                        <input type="password" name="confirmpassword" id="confirmpassword" class="form-control"
+                            placeholder="Enter Password">
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Signup</button>
+                    </div>
+                    <div class="form-group">
+                        <p class="text-center">Have account?
+                            <a routerLink="/login" id="login">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
