@@ -8,19 +8,27 @@
                             <h1>Login</h1>
                         </div>
                     </div>
-                    <form method="post" name="login">
+
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email ID</label>
-                            <input name="email" class="form-control" required [(ngModel)]="email"
-                                placeholder="Enter Email">
+                            <input type="text" id="emailid" class="form-control" formControlName="emailid"
+                                placeholder="Enter Email" [ngClass]="{ 'is-invalid': submitted && f.emailid.errors }">
+                            <div *ngIf="submitted && f.emailid.errors" class="invalid-feedback">
+                                <div *ngIf="f.emailid.errors.required">Email ID is required</div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword">Password</label>
-                            <input type="password" name="password" id="password" class="form-control"
-                                placeholder="Enter Password">
+                            <input type="password" name="password" class="form-control" formControlName="password"
+                                placeholder="Enter Password"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Password is required</div>
+                            </div>
                         </div>
-                        <div class="col-md-12 text-center ">
-                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                        <div class="col-md-12 text-center">
+                            <button class="btn btn-block mybtn btn-primary tx-tfm">Login</button>
                         </div>
                         <div class="form-group">
                             <p class="text-center">Don't have account?

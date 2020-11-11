@@ -7,7 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  {
+    path: '', component: LoginComponent,
+    // loadChildren: () => import('./login/login.component').then(m => m.LoginComponent)
+  },
   { path: 'login', redirectTo: '/', pathMatch: 'full' },
   { path: 'signup', component: SignupComponent },
   { path: 'users', component: UsersComponent },
