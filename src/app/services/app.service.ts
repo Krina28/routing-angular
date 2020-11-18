@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 
 //import { Observable } from 'rxjs/Rx';
 
-@Injectable()
+@Injectable({
+    "providedIn": "root"
+})
 export class AppService {
     private url: string = 'https://jsonplaceholder.typicode.com';
 
